@@ -25,7 +25,7 @@
       background-position: center;        
       background-repeat: no-repeat;            
       background-attachment: fixed;         
-      padding-bottom: 120px;    /* ← increased to push footer down */
+      padding-bottom: 120px;    /* ← keeps footer at true bottom */
     }    
 
     /* TOP NAV - exact copy */
@@ -79,7 +79,7 @@
       border-radius: 8px; 
       background-color: #1F1FFF; 
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);    
-      margin-bottom: 80px;   /* ← this drops the footer lower */
+      margin-bottom: 80px;   
     }    
 
     h1 {
@@ -135,7 +135,7 @@
       transform: scale(0.98);
     }
 
-    /* Updated Footer with Social Icons */
+    /* Footer - exact copy */
     .footer {        
         position: absolute; 
         bottom: 0;        
@@ -147,33 +147,38 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 15px; /* Spacing between icons and text */
+        gap: 15px; 
         padding: 20px 0;       
         font-size: 0.8rem;        
         letter-spacing: 1px;        
         font-weight: bold;
     }
 
-    /* Social Icons Container */
     .social-links {
         display: flex;
-        justify-content: center; /* This centers them horizontally */
-        align-items: center;     /* This centers them vertically if needed */
-        gap: 20px; /* Space between each icon */
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
     }
 
-    /* Individual Social Icon Links */
     .social-links a {
         color: #fff;
-        font-size: 1.5rem; /* Icon size */
+        font-size: 1.5rem;
         text-decoration: none;
         transition: color 0.3s ease, transform 0.2s ease;
     }
 
-    /* Hover effect for social icons */
     .social-links a:hover {
-        color: #1F1FFF; /* Darker blue on hover */
-        transform: scale(1.1); /* Slight pop effect */
+        color: #1F1FFF;
+        transform: scale(1.1);
+    }
+
+    /* Status message */
+    .status {
+      margin-top: 20px;
+      font-weight: bold;
+      min-height: 24px;
+      color: #fff;
     }
   </style>
 </head>
@@ -190,26 +195,26 @@
 
     <form id="foundingForm" style="width:100%; max-width:400px;">
       <div class="form-group">
-        <label>X ACCOUNT OR USERNAME<span style="color:#FF0000">*</span></label>
-        <input type="text" id="monad_wallet" placeholder="0x..." required>
+        <label>X ACCOUNT OR USERNAME <span style="color:#FF0000">*</span></label>
+        <input type="text" id="x_account" placeholder="@yourhandle" required>
       </div>
 
       <div class="form-group">
         <label>INSTAGRAM ACCOUNT OR USERNAME</label>
-        <input type="text" id="x_handle" placeholder="@alient315">
+        <input type="text" id="instagram_account" placeholder="@alient315">
       </div>
 
       <div class="form-group">
         <label>MONAD WALLET ADDRESS</label>
-        <input type="email" id="email">
+        <input type="text" id="monad_wallet" placeholder="0x...">
       </div>
 
       <div class="form-group">
-        <label>DO YOU FOLLOW US IN X IG TIKTOK DISCORD</label>
-        <select id="favorite_device">
+        <label>DO YOU FOLLOW US ON X, IG, TIKTOK, DISCORD?</label>
+        <select id="follows_us">
           <option value="">Select</option>
-          <option value="Tractor Beam">YES</option>
-          <option value="Gravity Inverter">NO</option>
+          <option value="YES">YES</option>
+          <option value="NO">NO</option>
         </select>
       </div>
 
@@ -219,7 +224,7 @@
     <div id="status" class="status"></div>
   </div>    
 
-  <!-- Same footer (now sits at the true bottom) -->
+  <!-- Same footer -->
   <footer class="footer">
     <div class="social-links">
       <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
@@ -241,12 +246,10 @@
       status.innerHTML = 'TRANSMITTING TO THE VOID...';
 
       const data = {
+        x_account: document.getElementById('x_account').value.trim(),
+        instagram_account: document.getElementById('instagram_account').value.trim(),
         monad_wallet: document.getElementById('monad_wallet').value.trim(),
-        x_handle: document.getElementById('x_handle').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        favorite_device: document.getElementById('favorite_device').value,
-        favorite_object: document.getElementById('favorite_object').value,
-        message: document.getElementById('message').value.trim()
+        follows_us: document.getElementById('follows_us').value
       };
 
       try {

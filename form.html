@@ -135,45 +135,45 @@
       transform: scale(0.98);
     }
 
-    /* Footer - exact copy */
+    /* Updated Footer with Social Icons */
     .footer {        
-      position: absolute; 
-      bottom: 0;        
-      left: 0;        
-      width: 100%;            
-      background-color: #4F4FFF; 
-      color: #fff;           
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px 0;       
-      font-size: 0.8rem;        
-      letter-spacing: 1px;        
-      font-weight: bold;
-    }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    .social-links a {
-      color: #fff;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s ease, transform 0.2s ease;
-    }
-    .social-links a:hover {
-      color: #1F1FFF;
-      transform: scale(1.1);
+        position: absolute; 
+        bottom: 0;        
+        left: 0;        
+        width: 100%;            
+        background-color: #4F4FFF; 
+        color: #fff;           
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px; /* Spacing between icons and text */
+        padding: 20px 0;       
+        font-size: 0.8rem;        
+        letter-spacing: 1px;        
+        font-weight: bold;
     }
 
-    .status {
-      margin-top: 20px;
-      font-weight: bold;
-      min-height: 24px;
-      color: #fff;
+    /* Social Icons Container */
+    .social-links {
+        display: flex;
+        justify-content: center; /* This centers them horizontally */
+        align-items: center;     /* This centers them vertically if needed */
+        gap: 20px; /* Space between each icon */
+    }
+
+    /* Individual Social Icon Links */
+    .social-links a {
+        color: #fff;
+        font-size: 1.5rem; /* Icon size */
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    /* Hover effect for social icons */
+    .social-links a:hover {
+        color: #1F1FFF; /* Darker blue on hover */
+        transform: scale(1.1); /* Slight pop effect */
     }
   </style>
 </head>

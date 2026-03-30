@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+  <meta charset="UTF-8">    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+  <title>ALIENT • FOUNDING FORM</title>   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>    
+    * { box-sizing: border-box; }    
+    body {
+      padding-top: 90px;                
+      margin: 0;        
+      min-height: 100vh;         
+      display: flex;        
+      flex-direction: column;        
+      justify-content: center;        
+      align-items: center;        
+      background-color: #f0f2f5;        
+      font-family: sans-serif;        
+      padding: 20px;         
+      border: 10px solid #4F4FFF;         
+      background-color: #4F4FFF;                        
+      background-image: url('IMG_0171.png');        
+      background-size: cover;             
+      background-position: center;        
+      background-repeat: no-repeat;            
+      background-attachment: fixed;         
+      padding-bottom: 60px;    
+    }    
+
+    /* TOP NAV - exact copy from index.html */
+    .top-nav {    
+      position: fixed; 
+      top: 0;   
+      left: 0;    
+      width: 100%;    
+      height: 70px;    
+      background-color: #4F4FFF;  
+      color: #fff;        
+      display: flex;    
+      justify-content: space-between; 
+      align-items: center;    
+      padding: 0 5%; 
+      box-sizing: border-box;    
+      z-index: 1000; 
+    }    
+    .logo {
+      font-weight: 800;        
+      font-size: 1.5rem;        
+      letter-spacing: 2px;    
+    }    
+    .nav-btn {    
+      background-color: transparent;    
+      color: #fff;    
+      border: 1px solid #fff;    
+      padding: 8px 16px;    
+      font-size: 0.8rem;    
+      font-weight: bold;    
+      cursor: pointer;    
+      transition: 0.3s;    
+      text-decoration: none; 
+      display: inline-block;
+    }    
+    .nav-btn:hover {    
+      background-color: #fff;    
+      color: #4F4FFF;    
+    }    
+
+    /* WIREFRAME CARD - exact copy */
+    .wireframe-card {            
+      border: 10px solid #FF0000; 
+      padding: 40px;            
+      display: flex;            
+      flex-direction: column;            
+      align-items: center;            
+      text-align: center;                        
+      width: 100%;            
+      max-width: 500px; 
+      border-radius: 8px; 
+      background-color: #1F1FFF; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);        
+    }    
+
+    h1 {
+      color: #FFFFFF;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    /* Form styling - matches your button & card */
+    .form-group {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    label {
+      display: block;
+      color: #fff;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #FF0000;
+      background-color: #fff;
+      color: #000;
+      font-size: 1rem;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    .btn {
+      width: 100%;
+      max-width: 400px;
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #4F4FFF;
+      color: #fff;
+      transition: transform 0.2s, background-color 0.2s;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background-color: #333;
+      transform: scale(1.02);
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Footer - exact copy */
+    .footer {        
+      position: absolute; 
+      bottom: 0;        
+      left: 0;        
+      width: 100%;            
+      background-color: #4F4FFF; 
+      color: #fff;           
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px 0;       
+      font-size: 0.8rem;        
+      letter-spacing: 1px;        
+      font-weight: bold;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-links a {
+      color: #fff;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+    .social-links a:hover {
+      color: #1F1FFF;
+      transform: scale(1.1);
+    }
+
+    .status {
+      margin-top: 20px;
+      font-weight: bold;
+      min-height: 24px;
+    }
+  </style>
+</head>
+<body>    
+  <!-- Same top nav -->
+  <nav class="top-nav">        
+    <div class="logo">ALIENT</div>               
+    <a href="index.html" class="nav-btn">← BACK TO HOME</a>    
+  </nav>    
+
+  <!-- Same wireframe card with the form inside -->
+  <div class="wireframe-card">        
+    <h1>FOUNDING FORM</h1>              
+
+    <form id="foundingForm" style="width:100%; max-width:400px;">
+      <div class="form-group">
+        <label>MONAD WALLET ADDRESS <span style="color:#FF0000">*</span></label>
+        <input type="text" id="monad_wallet" placeholder="0x..." required>
+      </div>
+
+      <div class="form-group">
+        <label>@X HANDLE</label>
+        <input type="text" id="x_handle" placeholder="@alient315">
+      </div>
+
+      <div class="form-group">
+        <label>EMAIL (OPTIONAL)</label>
+        <input type="email" id="email">
+      </div>
+
+      <div class="form-group">
+        <label>FAVORITE MANIPULATION DEVICE</label>
+        <select id="favorite_device">
+          <option value="">Select device...</option>
+          <option value="Tractor Beam">Tractor Beam</option>
+          <option value="Gravity Inverter">Gravity Inverter</option>
+          <option value="Quantum Harvester">Quantum Harvester</option>
+          <option value="Orbit Shifter">Orbit Shifter</option>
+          <option value="Signal Disruptor">Signal Disruptor</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>FAVORITE SPACE OBJECT</label>
+        <select id="favorite_object">
+          <option value="">Select object...</option>
+          <option value="Rogue Asteroid">Rogue Asteroid</option>
+          <option value="Alien Probe">Alien Probe</option>
+          <option value="Fractured Planet Core">Fractured Planet Core</option>
+          <option value="Cosmic Anomaly">Cosmic Anomaly</option>
+          <option value="Signal Relay Satellite">Signal Relay Satellite</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>MESSAGE TO THE SWARM (OPTIONAL)</label>
+        <textarea id="message" rows="4" placeholder="Any feedback or ideas?"></textarea>
+      </div>
+
+      <button type="submit" class="btn">SUBMIT TO SUPABASE →</button>
+    </form>
+
+    <div id="status" class="status"></div>
+  </div>    
+
+  <!-- Same footer -->
+  <footer class="footer">
+    <div class="social-links">
+      <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+      <a href="#" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="#" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // ←←← REPLACE THESE WITH YOUR SUPABASE DETAILS
+    const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJ...';
+
+    document.getElementById('foundingForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = document.getElementById('status');
+      status.innerHTML = 'TRANSMITTING TO THE VOID...';
+
+      const data = {
+        monad_wallet: document.getElementById('monad_wallet').value.trim(),
+        x_handle: document.getElementById('x_handle').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        favorite_device: document.getElementById('favorite_device').value,
+        favorite_object: document.getElementById('favorite_object').value,
+        message: document.getElementById('message').value.trim()
+      };
+
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/form_responses`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          status.innerHTML = '✅ SIGNAL LOCKED.<br>Your data is now part of the swarm.<br>Airdrop queued on Monad!';
+          e.target.reset();
+        } else {
+          status.innerHTML = '❌ Transmission failed. Try again.';
+        }
+      } catch (err) {
+        status.innerHTML = '❌ Void interference. Check console.';
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -25,10 +25,10 @@
       background-position: center;        
       background-repeat: no-repeat;            
       background-attachment: fixed;         
-      padding-bottom: 60px;    
+      padding-bottom: 120px;    /* ← increased to push footer down */
     }    
 
-    /* TOP NAV - exact copy from index.html */
+    /* TOP NAV - exact copy */
     .top-nav {    
       position: fixed; 
       top: 0;   
@@ -66,7 +66,7 @@
       color: #4F4FFF;    
     }    
 
-    /* WIREFRAME CARD - exact copy */
+    /* WIREFRAME CARD - exact copy + extra bottom margin */
     .wireframe-card {            
       border: 10px solid #FF0000; 
       padding: 40px;            
@@ -78,7 +78,8 @@
       max-width: 500px; 
       border-radius: 8px; 
       background-color: #1F1FFF; 
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);        
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);    
+      margin-bottom: 80px;   /* ← this drops the footer lower */
     }    
 
     h1 {
@@ -172,6 +173,7 @@
       margin-top: 20px;
       font-weight: bold;
       min-height: 24px;
+      color: #fff;
     }
   </style>
 </head>
@@ -182,7 +184,7 @@
     <a href="index.html" class="nav-btn">← BACK TO HOME</a>    
   </nav>    
 
-  <!-- Same wireframe card with the form inside -->
+  <!-- Same wireframe card -->
   <div class="wireframe-card">        
     <h1>FOUNDING FORM</h1>              
 
@@ -237,7 +239,7 @@
     <div id="status" class="status"></div>
   </div>    
 
-  <!-- Same footer -->
+  <!-- Same footer (now sits at the true bottom) -->
   <footer class="footer">
     <div class="social-links">
       <a href="#" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
@@ -249,7 +251,7 @@
   </footer>
 
   <script>
-    // ←←← REPLACE THESE WITH YOUR SUPABASE DETAILS
+    // ←←← REPLACE THESE WITH YOUR REAL SUPABASE KEYS
     const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJ...';
 
